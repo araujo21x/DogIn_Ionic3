@@ -1,2 +1,3 @@
-# DogIn_Ionic3
-DogIn Ionic3 and firebase
+# Projeto 
+
+iniciando teste para começar a trabalhar em equipe.

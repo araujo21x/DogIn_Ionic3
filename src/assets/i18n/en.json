@@ -1,0 +1,206 @@
+{
+
+    "side-menu":{
+        "owns": "Owns",
+        "dogs": "Dogs",
+        "logout": "Logout",
+        "home": "Home",
+        "user-settings": "User Settings",
+        "mydogs": "My dogs",
+        "howitworks": "How it works",
+        "contactus": "Contact us",
+        "about": "About"
+    },
+
+    "alert": {
+        "register": {
+
+        }
+    },
+    "recovery": {
+
+    },
+    "pages": {
+        "login": {
+            "description1":"The relationship app",
+            "description2":"for dogs",
+            "email":"E-mail",
+            "password":"Password",
+            "enter":"Login",
+            "socialnetworks":"Or use the social networks below",
+            "register":"Sign up",
+            "lostpassword":"I forgot my password",
+            "noaccount":"No account?"
+        },
+        "recover-password": {
+            "register":"Sign up",
+            "forgotupasswd":"Forgot your password?",
+            "dontworry":"Don't worry. Enter you email and we'll' send you a link to generate a new password.",
+            "validemail":"Please enter a valid email address!!!",
+            "enteryouremail":"Enter your email",
+            "recoverpasswd":"Recover password",
+            "areyounewhere":"Are you new here?"
+        },
+        "register-user":{
+            "greetings":"Sign up and join other users, dogs and petshops.",
+            "typeofregister":"Select the type of register",
+            "petowner":"Pet owner",
+            "enteryourinformation":"Enter your information:",
+            "fristname":"Enter your frist name",
+            "lastname":"Enter your last name",
+            "thenamefieldisrequired":"The name field is required",
+            "surnamefieldisrequired":"Surname field is required",
+            "enteryouremail":"Enter your email",
+            "emailregistred":"This email is already registered to another user.",
+            "emailrequired":"Email address is required",
+            "invalid":"Invalid",
+            "checkingemail":"Checking email...",
+            "valid":"valid",
+            "male":"Masculino",
+            "female":"Female",
+            "others":"Others",
+            "genderrequired":"Gender field is required",
+            "birthday":"Enter your birth date",
+            "birthrequired":"The date of birth field is required",
+            "over18":"You must be over 18 to register.",
+            "enteryourpasswd":"Enter your password",
+            "confirmpasswd":"Confirm your password",
+            "passwdandconfirm":"The Password field and confirm password are required.",
+            "passwd6characters":"The password field must be at least 6 characters long.",
+            "samepasswd":"Password and password confirmation must be the same.",
+            "termsofuse":"Terms of use",
+            "mustaccept":"To register, you must accept the",
+            "signup":"Sign up",
+            
+            "petshopinfos":"Digite as informações do Petshop: ",
+            "fristname":"Enter your frist name",
+            "email":"Enter your e-mail"
+
+        },
+        "terms": {
+            
+        },
+        "home": {
+            "homeTitle":"Home"
+        },
+        "about":{
+            "aboutTitle":"About",
+            "useTerms":"Terms of use",
+            "contactUs":"Contact us",
+            "aboutUs":"Who we are?"
+            
+        },
+        "contact":{
+            "contactTitle":"Talk to us",
+            "topic":"Topics",
+            "bugReport":"Report bugs",
+            "feedback":"Feedback",
+            "sugestion":"Sugestions",
+            "others":"Others",
+            "shareWithUs":"Share with us :)",
+            "sendButton":"Send"
+        },
+        "list-dogs":{
+            "title": "My dogs",
+            "age": "Age",
+            "years": "Years"
+        },
+
+        "search-dog":{
+            "age": "Age",
+            "years": "years"
+        },
+        
+        "edit-dog":{
+            "age": "Age",
+            "heatState":"Heat State: ",
+            "basicInformation": "Basic Information",
+            "name": "Name",
+            "birthday": "Birth Date",
+            "sex": "Sex",
+            "sex-male": "Male",
+            "sex-female": "Female",
+            "breed": "Breed",
+            "fur-color": "Fur Color",
+            "fur-type": "Fur Type",
+            "fur-type-short": "Short",
+            "fur-type-average": "Average",
+            "fur-type-long": "Long",
+            "fur-type-curly": "Curly",
+            "fur-type-double": "Double",
+            "fur-type-hard": "Hard",
+            "fur-type-others": "Others",
+            "temperament": "Temperament",
+            "temperament-playful": "Playful",
+            "temperament-docile": "Docile",
+            "temperament-dependent": "Dependent",
+            "temperament-fearful": "Fearful",
+            "temperament-territorial": "Territorial",
+            "temperament-angry": "Angry",
+            "complementary-information": "Complementary Information",
+            "weight": "Weight",
+            "eye-color": "Eye Color",
+            "eye-color-blue": "Blue",
+            "eye-color-brown": "Brown",
+            "eye-color-two-colors": "Two Colors",
+            "pedigree": "Pedigree",
+            "yes": "Yes",
+            "no": "No",
+            "dressage": "Dressage",
+            "dressage-type": "Dressage Type",
+            "other-features": "Other Features",
+            "medical-information": "Medical Information",
+            "abnormality": "Abnormality",
+            "worming": "Worming",
+            "wormingFrequency": "Worming Frequency",
+            "date-three-month": "Three Month",
+            "date-four-month": "Four Month",
+            "date-five-month": "Five Month",
+            "date-six-month": "Six Month",
+            "date-seven-month": "Seven Month",
+            "date-eight-month": "Eight Month",
+            "date-nine-month": "Nine Month",
+            "date-ten-month": "Ten Month",
+            "date-eleven-month": "Eleven Month",
+            "date-twelve-month": "Twelve Month",
+            "date-random": "Random",
+            "vaccination": "vaccination",
+            "up-to-date": "up to date",
+            "some-delayed": "Some Delayed",
+            "delayed": "Delayed",
+            "medical-observation": "Medical Observation",
+            "heat-information": "Heat Information",
+            "date-last-heat": "Date of last heat",
+            "heat-frequency": "Heat frequency",
+            "do-not-know": "Do not know",
+            "heat-duration": "Heat Duration",
+            "one-week": "One Week",
+            "two-week": "Two Weeks",
+            "three-week": "Three Weeks",
+            "four-week": "Four Weeks",
+            "cancel": "Cancel",
+            "save": "Save"
+        },
+        "edit-user":{
+            "userSettings": "User Settings",
+            "typeYourName":"Enter your frist name",
+            "typeYourSurname":"Enter your surname",
+            "fieldName":"The name field is required",
+            "fieldSurname":"Surname field is required",
+            "sex":"Sex",
+            "male":"Male",
+            "female":"Female",
+            "others":"Others",
+            "fieldSex":"The sex field is required",
+            "yourBirthday":"Enter your birth date",
+            "fieldBirth":"The date of birth field is required",
+            "over18":"You must be over 18 years old.",
+            "appTheme":"App theme:",
+            "changeInformation":"Change information"
+        },
+        "search-dogs":{
+            "searchDogs":"Search dogs",
+            "selectedFilters":"Selected filters"
+        }
+    }
+}

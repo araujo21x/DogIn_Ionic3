@@ -1,0 +1,93 @@
+.pink-theme{
+        //Background dos headers
+        .toolbar-background{background-color:#ff8fe3;}
+
+        //Background do side menu
+        .background-side-menu{background-color: #ff8fe3;}
+
+        //Side menu
+        .pages-side-menu{color: #ff8fe3;}
+        .pages-side-menu ion-icon{color: #ff8fe3;}
+
+        //list dog/edit dog
+        .botao-add{background: #ff8fe3;}
+        .botao-add:hover{background-color: #ff8fe3 !important;}
+        .list-dog-raca{color: #757575;}
+        .list-dog-nascimento{color: #969696}
+        .list-dog-peso{color: #c4c4c4}
+        .label-size ion-label{color: #686868;}
+        .raca-top{color:  #8a8a8a;}
+        .label-size ion-label{font-size: 0.7em; min-width: 48% !important; max-width: 45% !important; color: #686868;}
+        ion-item-divider{color: black;}
+        .cio-estado-label{color: black;}
+
+        .label-size .nome{color: #9b9b9b;}
+        .label-size ion-datetime{color: #9b9b9b;}
+        .label-size .sexo{color: #9b9b9b;}
+        .label-size .raca{color: #9b9b9b;}
+        .label-size .cor-pelagem{color: #9b9b9b;}
+        .label-size .pelagem{color: #9b9b9b;}
+        .label-size .temperamento{color: #9b9b9b;}
+
+        .label-size .peso{color: #9b9b9b;}
+        .label-size .olhos{color: #9b9b9b;}
+        .label-size .tipo-adestramento{color: #9b9b9b;}
+        .label-size .outras{color: #9b9b9b;}
+
+        .label-size .anormalidade{color: #9b9b9b;}
+        .label-size .vermifugado-frequencia{color: #9b9b9b;}
+        .label-size .vacinacao{color: #9b9b9b;}
+        .label-size .obs-medicas{color: #9b9b9b;}
+
+        .label-size .cio-data{color: #9b9b9b;}
+        .label-size .cio-frequencia{color: #9b9b9b;}
+        .label-size .cio-duracao{color: #9b9b9b;}
+
+        //Cadastrar dog
+        .tema{color: #ff8fe3;}
+        .swiper-pagination-bullet-active{background:#ff8fe3;}
+        .botao-prev-next{color:#ff8fe3; font-size: 0.6em;}
+        .x-button{background:#ff8fe3;}
+
+        //Edit dog
+        .edit-dog-botao{
+        border-radius: 0.6em !important;
+        font-size: 1em;
+        margin-top: 1em;
+        width: 8em;
+        height: 3em;
+        display: block !important;
+        }
+        .button-clear-md{color: #ff8fe3;}
+        .button-clear-ios{color: #ff8fe3;}
+        .edit-dog-salvar{background: #ff8fe3;}
+        .edit-dog-salvar:hover{background-color: #ff8fe3 !important;}
+        .toggle.toggle-checked .toggle-inner{background-color: #ff8fe3;}
+        .toggle-md.toggle-checked .toggle-icon{background-color: #ffcdf3;}
+        .toggle-ios.toggle-checked .toggle-icon{background-color: #ffcdf3;}
+
+        //Edit user
+        .alterar-dados{background: #ff8fe3;}
+        .alterar-dados:hover{background-color: #ff8fe3 !important;}
+        .avatar{border: 5px solid  #ff8fe3;}
+
+        //Buscar dog
+        .select-md .select-icon .select-icon-inner{color: #ff8fe3;}
+        .select-ios .select-icon .select-icon-inner{color: #ff8fe3;}
+        .filtros{color: #ff8fe3;}
+
+        //Detail dog
+        .label-size .pedigree{color: #9b9b9b;}
+        .label-size .adestramento{color: #9b9b9b;}
+        .label-size .vermifugado{color: #9b9b9b;}
+        .label-size .idade{color: #9b9b9b;}
+        .botao-curti{background-color: #ff8fe3;}
+
+        //Home
+        .list-md ion-item-sliding{background-color: #ffecfb; border-radius: 1.5em;}
+        .list-ios ion-item-sliding{background-color: #ffecfb; border-radius: 1.5em;}
+        .notificacao-destaque{color: #ff8fe3;}
+
+        //Fale conosco
+        .contact-botao-enviar{background-color: #ff8fe3; border-radius: 0.7em; margin-top: 1em;}
+}

@@ -1,0 +1,109 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ 'pages.edit-user.userSettings' | translate }}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-12>
+        <div class="avatar">
+          <img (click)="openActionSheet()" [src]="profileImage" *ngIf="profileImage" />
+          <img (click)="openActionSheet()" *ngIf="!profileImage" src="assets/imgs/icon-edit-perfil.png" />
+        </div>
+      </ion-col>
+      <!--
+
+        <ion-col col-12>
+          <ng-container *ngIf="progress | async as percent">
+            <progress-bar [progress]="percent"></progress-bar>
+          </ng-container>
+        </ion-col>
+      -->
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+
+        <form id="common-form" [formGroup]="basicForm" (ngSubmit)="onSubmitForm()" novalidate>
+
+          <ion-item>
+            <ion-input type="text" placeholder="{{ 'pages.edit-user.enterYourName' | translate }}" name="name" [(ngModel)]="user.name"
+              formControlName="name"></ion-input>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.name.dirty && basicForm.controls.name.errors">
+            <div text-center class="alert alert-danger">{{ 'pages.edit-user.fieldName' | translate }}</div>
+          </div>
+
+          <ion-item>
+            <ion-input type="text" placeholder="{{ 'pages.edit-user.enterYourSurname' | translate }}" name="lastName" [(ngModel)]="user.lastName"
+              formControlName="lastName"></ion-input>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.lastName.dirty && basicForm.controls.lastName.errors">
+            <div text-center class="alert alert-danger">{{ 'pages.edit-user.fieldName' | translate }}</div>
+          </div>
+
+          <ion-item>
+            <ion-select placeholder="{{ 'pages.edit-user.sex' | translate }}" [(ngModel)]="user.sex" formControlName="sex" name="sex">
+              <ion-option id="masc" value="M">{{ 'pages.edit-user.male' | translate }}</ion-option>
+              <ion-option value="F">{{ 'pages.edit-user.female' | translate }}</ion-option>
+              <ion-option value="O">{{ 'pages.edit-user.others' | translate }}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.sex.dirty && basicForm.controls.sex.errors">
+            <div text-center class="alert alert-danger">{{ 'pages.edit-user.fieldSex' | translate }}</div>
+          </div>
+
+          <ion-item>
+            <ion-datetime greater-eighteen displayFormat="DD MMMM YYYY" [(ngModel)]="user.birthDate" placeholder="{{ 'pages.edit-user.yourBirthday' | translate }}" name="birthDate" formControlName="birthDate"></ion-datetime>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.birthDate.dirty && basicForm.controls.birthDate.errors">
+            <div *ngIf="basicForm.controls.birthDate.errors.required">
+              <div text-center class="alert alert-danger">{{ 'pages.edit-user.fieldBirthday' | translate }}</div>
+            </div>
+
+            <div *ngIf="basicForm.controls.birthDate.errors.isUnderAge">
+              <div text-center class="alert alert-danger">{{ 'pages.edit-user.over18' | translate }}</div>
+            </div>
+          </div>
+
+          <ion-label>{{ 'pages.edit-user.appTheme' | translate }}</ion-label>
+          <div class="row">
+              <div class="col-pad">
+                  <button class="buton-theme" color="secondary" ion-button full icon-left (click) ="pinkAppTheme()">{{ 'pages.edit-user.pinkTheme' | translate }}</button>
+              </div> 
+
+              <div class="col-pad">
+                  <button class="buton-theme" color="primary" ion-button full icon-left (click) ="blueAppTheme()">{{ 'pages.edit-user.blueTheme' | translate }}</button>
+              </div> 
+              
+              <div class="col-pad">
+                <button class="buton-theme" color="dark" ion-button full icon-left (click) ="darkAppTheme()">Dark</button>
+            </div> 
+
+          </div>
+
+            <button class="alterar-dados" ion-button full type="submit" [disabled]="basicForm.invalid">
+              {{ 'pages.edit-user.changeInformation' | translate }}
+            </button>         
+
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,183 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle="left">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Guia do App</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item-group>
+    <ion-item-divider no-lines color="light" (click)="expand('homeScreen', true)" *ngIf="!expandHomeScreen">
+      Tela Home
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+    </ion-item-divider>
+
+    <ion-item-divider no-lines color="light" (click)="expand('homeScreen', false)" *ngIf="expandHomeScreen">
+      Tela Home
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropup" ></ion-icon>
+      </button>
+    </ion-item-divider>
+  </ion-item-group>
+
+  <div *ngIf="expandHomeScreen">
+    <img src="assets/imgs/telaHome.png">
+    <p class="guide-texto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A tela Home é dividida em três itens que podem ser expandidos ou reduzidos, eles são “Dogs do Meu Interesse”, “Interessados nos meus dogs” e “Em abertos”:</p>
+    <p class="guide-texto"><strong>- Dogs do Meu Interesse</strong>: são dogs que vc deu um “Gostei” na tela de “buscar cães” e o dono desse cachorro aprovou, aprovação feita através do item “Em abertos” ao dá  “like”;</p>
+    <p class="guide-texto"><strong>- Interessados nos meus dogs</strong>: são pessoas que deram “Gostei” no seu cachorro, e você aprovou, aprovação feita através do item “Em abertos” ao dá  “like”;</p>
+  <p class="guide-texto"><strong>- Em abertos</strong>: Mensagens que aparecem quando alguém dá “Gostei no seu cachorro”, você pode apertar na opção “Deslike” que significa falta de interesse de sua parte ou “like” que significa que você tem interesse.</p>
+  </div>
+
+  <ion-item-group>
+    <ion-item-divider no-lines color="light" (click)="expand('myDogs', true)" *ngIf="!expandMyDogs">
+      Tela Meus Dogs
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+    </ion-item-divider>
+
+    <ion-item-divider no-lines color="light" (click)="expand('myDogs', false)" *ngIf="expandMyDogs">
+      Tela Meus Dogs
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropup" ></ion-icon>
+      </button>
+    </ion-item-divider>
+  </ion-item-group>
+
+  <div *ngIf="expandMyDogs">
+    <img src="assets/imgs/telaMeusDogs.png">
+    <p class="guide-texto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nessa tela você administrará seus cachorros</p>
+    <p class="guide-texto"><strong>- Adicionar Cachorros</strong>:  No canto inferior direito você tem o botão “+” ao clicar será redirecionado a página de cadastro de cachorro, nessa tela ao preencher cada campo você aperta em “próximo” para avançar até a última parte onde poderar voltar pra lista dos seus cachorros ou ir direto pra página de editar os dados do cachorro cadastrado no caso;</p>
+    <p class="guide-texto"><strong>- Excluir Cachorros</strong>: Ao clicar na no símbolo de lixeira à direita do seu cachorro aparecerá uma mensagem de confirmação para a exclusão desse cachorro;</p>
+    <p class="guide-texto"><strong>- Editar Dados do Cachorro</strong>: Quando clica em um dos seus cachorros irá para a página onde pode editar os dados desse cachorro, como por exemplo: escolher foto de perfil, adicionar foto e passar informações adicionais como cor dos olhos, informações do Cio para cadelas, informações médicas etc....</p>
+  </div>
+  <ion-item-group>
+    <ion-item-divider no-lines color="light" (click)="expand('editDog', true)" *ngIf="!expandEditDog">
+      Tela Mudar dados do Cachorro
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+    </ion-item-divider>
+
+    <ion-item-divider no-lines color="light" (click)="expand('editDog', false)" *ngIf="expandEditDog">
+        Tela Mudar dados do Cachorro
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropup" ></ion-icon>
+      </button>
+    </ion-item-divider>
+  </ion-item-group>
+
+  <div *ngIf="expandEditDog">
+    <img src="assets/imgs/telaEditDog.png">
+    <p class="guide-texto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nessa tela você pode mudar os dados do seu cão, existe um limite de 5 fotos por cachorro, quando alcançar o limite para adicionar outra foto será necessário apagar ao menos uma foto:</p>
+    <p class="guide-texto"><strong>- Adicionar foto na galeria do cachorro</strong>:  No lado direito no nome e símbolo do sexo do cachorro tem um botão de “+” quando aperta irá surgir uma janela para escolher se deseja tirar uma foto ou pegar uma da galeria do celular, depois de escolher ou tirar a foto irá para a parte do upload, nessa parte a foto será salva, se adicionar uma foto antes do upload da foto anterior finalizar, ele será cancelado e irá aparecer um erro;</p>
+    <p class="guide-texto"><strong>- Foto de perfil do Dog</strong>: Para colocar a selecionar a foto de perfil do dog só precisa clicar no símbolo de coração da foto escolhida e depois apertar no botão “Salvar” no final da página;</p>
+    <p class="guide-texto"><strong>- Apagar a foto</strong>: Cada usuário tem limite de 5 fotos por dog, para excluir só precisa apertar no símbolo de lixeira na foto que deseja apagar e em seguida confirma;</p>
+    <p class="guide-texto"><strong>- Mudar dados</strong>: Para mudar os dados só precisa expandir a aba ou as abas das informações que deseja mudar, após isso é só mudar os campos que deseja e apertar o botão “Salvar” no final da página.</p>
+  </div>
+  
+  <ion-item-group>
+    <ion-item-divider no-lines color="light" (click)="expand('searchDogs', true)" *ngIf="!expandSearchDogs">
+      Tela Buscar Cães 
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+    </ion-item-divider>
+
+    <ion-item-divider no-lines color="light" (click)="expand('searchDogs', false)" *ngIf="expandSearchDogs">
+      Tela Buscar Cães 
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropup" ></ion-icon>
+      </button>
+    </ion-item-divider>
+  </ion-item-group>
+
+  <div *ngIf="expandSearchDogs">
+      <img src="assets/imgs/telaSearchDog.png">
+    <p class="guide-texto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nessa tela vc pesquisa por dogs para cruzar com os seus:</p>
+    <p class="guide-texto"><strong>- Filtrar dados</strong>:  No canto superior Direito você ao clicar no ícone você aparecerá um menu para você informar dados para filtrar cachorros na busca;</p>
+    <p class="guide-texto"><strong>- Mostrar informaçoes dos cachorros</strong>: Ao clicar em um cachorro você ira para uma pagina onde mostra o detalhe desse cachorro, além do botão “Gostei”, ao apertar você pode mandar uma mensagem para o dono desse cachorro, essa mensagem vai como uma mensagem para o outro usuário que ficará na tela home no item “Em abertas”, se houver like ira aparecer uma notificação na sua tela home no item “ Dogs do meu interesse”.</p>
+  </div>
+
+  <ion-item-group>
+    <ion-item-divider no-lines color="light" (click)="expand('userSettings', true)" *ngIf="!expandUserSettings">
+      Tela Configurações do Usuário
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+    </ion-item-divider>
+
+    <ion-item-divider no-lines color="light" (click)="expand('userSettings', false)" *ngIf="expandUserSettings">
+      Tela Configurações do Usuário
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropup" ></ion-icon>
+      </button>
+    </ion-item-divider>
+  </ion-item-group>
+
+  <div *ngIf="expandUserSettings">
+      <img src="assets/imgs/telaEditUser.png">
+      <p class="guide-texto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nessa tela você pode mudar seus dados, além de adicionar foto de perfil e escolher o tema do aplicativo:</p>
+      <p class="guide-texto"><strong>- Adicionar/Trocar foto de perfil</strong>: Ao clicar no círculo que contém sua foto de perfil ou uma foto de perfil padrão de maneira leiga um bonequinho  em cima dos dados seus dados aparecerá duas opções uma para abrir a câmera para tirar foto de perfil ou escolher a foto na sua galeria depois no final da página é só apertar em “Alterar Dados”;</p>
+      <p class="guide-texto"><strong>- Mudar seus dados</strong>: Só precisa clicar no campo que deseja mudar e fazer a mudança ou correção, após esse procedimento é só apertar em “Alterar Dados”</p>
+      <p class="guide-texto"><strong>- Mudar Tema:</strong>Só precisa apertar no botão do tema que deseja e a mudança é feita.</p>
+  </div>
+
+  <ion-item-group>
+    <ion-item-divider no-lines color="light" (click)="expand('shareApp', true)" *ngIf="!expandShareApp">
+      Tela Compartilhar App
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+    </ion-item-divider>
+
+    <ion-item-divider no-lines color="light" (click)="expand('shareApp', false)" *ngIf="expandShareApp">
+      Tela Compartilhar App
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropup" ></ion-icon>
+      </button>
+    </ion-item-divider>
+  </ion-item-group>
+
+  <div *ngIf="expandShareApp">
+      <img src="assets/imgs/telaShareApp.png">
+      <p class="guide-texto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ao escolher essa opção você poderá compartilhar o app através de uma janela que contém alguns apps do seu celular, ao escolher um desses apps você poderá enviar uma mensagem que contém o link de um site onde seus amigos poderão baixar o DogIn.</p>
+  </div>
+
+  <ion-item-group>
+    <ion-item-divider no-lines color="light" (click)="expand('about', true)" *ngIf="!expandAbout">
+      Tela Sobre
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropdown" ></ion-icon>
+      </button>
+    </ion-item-divider>
+
+    <ion-item-divider no-lines color="light" (click)="expand('about', false)" *ngIf="expandAbout">
+      Tela Sobre
+      <button item-content ion-button icon-only clear >
+        <ion-icon name="arrow-dropup" ></ion-icon>
+      </button>
+    </ion-item-divider>
+  </ion-item-group>
+
+  <div *ngIf="expandAbout">
+      <img src="assets/imgs/telaAbout.png">
+      <p class="guide-texto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nessa janela terá 3 item, “Termos de uso”, “Fale Conosco” e “Quem Somos?”</p>
+      <p class="guide-texto"><strong>- Termos de uso</strong>: Irá mostrar os termos de uso do app, igual o que o usuário aceita no cadastro de usuário;</p>
+      <p class="guide-texto"><strong>- Fale conosco</strong>: Onde você poderá enviar uma mensagem para a equipe do DogIn;</p>
+      <p class="guide-texto"><strong>- Quem Somos?</strong>: Uma breve descrição de quem desenvolveu o app.</p>
+  </div>
+
+</ion-content>

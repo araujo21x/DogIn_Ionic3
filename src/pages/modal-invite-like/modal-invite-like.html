@@ -1,0 +1,30 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <button class="x-button" ion-button icon-only (click)="dismiss()">
+          <ion-icon name="md-close"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <ion-item no-lines>
+          <h2>
+            <span text-wrap>Digite sua mensagem para o dono do cão no qual você se interessou.</span> 
+          </h2>
+        </ion-item>
+        <ion-item class="borda-mensagem">
+          <ion-textarea rows="6" [(ngModel)]="message"></ion-textarea>
+        </ion-item>
+
+        <ion-item no-lines>
+          <button class="botao-cancelar-enviar" ion-button color="danger" (click)="dismiss()">
+            Cancelar
+          </button>
+          <button class="botao-cancelar-enviar" ion-button color="success" (click)="sendLike()">
+            Enviar
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

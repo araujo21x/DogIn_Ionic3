@@ -1,0 +1,39 @@
+.ios, .md{
+
+    page-detail-dog {
+
+    ion-item-divider{border: 0.01em}
+    .raca-top{font-size: 1.1em;}
+    .label-maior{font-size: 1.1em;}
+    .label-size ion-label{font-size: 0.7em; min-width: 48% !important; max-width: 45% !important;}
+    
+    .label-size .nome{text-align: right; font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .idade{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; margin-left: 1.9rem;}
+    .label-size .sexo{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .raca{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .cor-pelagem{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .pelagem{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .temperamento{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+
+    .label-size .peso{text-align: right; font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .olhos{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .pedigree{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .adestramento{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .tipo-adestramento{text-align: right; font-size: 0.7em; padding-right: 0.9rem;  width: 100%; margin-left: 1.9rem;}
+    .label-size .outras{text-align: right;  font-size: 0.7em; padding-right: 0.9rem;; width: 100%; margin-left: 1.9rem;}
+
+    .label-size .anormalidade{text-align: right;  font-size: 0.7em;  padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .vermifugado{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .vermifugado-frequencia{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .vacinacao{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .obs-medicas{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+
+    .label-size .cio-data{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .cio-frequencia{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+    .label-size .cio-duracao{text-align: right;  font-size: 0.7em; padding-right: 0.9rem; width: 100%; margin-left: 1.9rem;}
+
+    footer{border: 0px !important;}
+    .botao-curti{width: 4em; height: 4em; border-radius: 50%;}
+    }
+
+}

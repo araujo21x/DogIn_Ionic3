@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{ 'pages.about.aboutTitle' | translate }}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="about-background" padding>
+
+
+  <div>
+    <ion-list no-lines>
+      <button ion-item (click)="goToTerms()">
+          {{ 'pages.about.useTerms' | translate }}
+      </button>
+
+      <button ion-item (click)="goToContact()">
+          {{ 'pages.about.contactUs' | translate }}
+      </button>
+
+      <div *ngIf="!expand">
+        <button ion-item (click)="whoWeAre(true)" detail-none >
+          {{ 'pages.about.aboutUs' | translate }} 
+          <ion-icon name="arrow-forward" item-end></ion-icon>
+        </button>
+      </div>
+      <div *ngIf="expand">
+        <button ion-item (click)="whoWeAre(false)" detail-none >
+          {{ 'pages.about.aboutUs' | translate }}    
+          <ion-icon name="arrow-down" item-end></ion-icon>
+        </button>
+      </div>
+      <br>
+      <div *ngIf="expand">
+          <div text-center>
+            <img class="about-logo" src="assets/imgs/DOGIN-LOGO.png" alt="Logo da Dogin">
+          </div>
+          <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A equipe é formada por 4 alunos, Carlos Pinheiro Junior, Eliel das virgens, Gustavo R. fernandes e Lucas de Araujo, todos licenciandos do curso de licenciatura em ciências da computação, atualmente indo para o quinto semestre. A ideia do projeto DogIn surgiu através de uma conversa com um colega de curso e foi levada adiante em um trabalho para a disciplina de eng de software onde o foco do projeto foi estudar as metodologias ágeis.</p> 
+      </div>
+      
+    </ion-list>
+  </div>
+  
+
+</ion-content>

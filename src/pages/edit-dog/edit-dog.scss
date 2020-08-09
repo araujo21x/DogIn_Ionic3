@@ -1,0 +1,66 @@
+.ios, .md{
+    page-edit-dog {
+        .x-button{width: 3em; height: 3em; border-radius: 50%; left: 1em;}
+        .profilebutton{
+            z-index: 2;
+            position: absolute;
+            left: 80%;
+            top: 2%;
+            margin: auto;
+            width: 15%; height: 20%;
+            background-color: #ff8fe3;
+            border-radius: 50%;
+        }
+        .deletebutton{
+            z-index: 2;
+            position: absolute;
+            left: 80%;
+            top: 30%;
+            margin: auto;
+            background-color: #fc2e2e;
+            width: 15%; height: 20%;
+            border-radius: 50%;
+        }
+
+        .botao-add{
+            width: 4rem; height: 4rem;;
+            border-radius: 50%;
+            left: 1;
+        }
+
+        .edit-dog-botao{
+            border-radius: 0.6em !important;
+            font-size: 1em;
+            margin-top: 1em;
+            width: 8em;
+            height: 3em;
+            display: block !important;
+        }
+
+        ion-item-divider{border: 0.01em}
+        .raca-top{font-size: 1.1em;}
+        .label-maior{font-size: 1.1em;}
+        .label-size ion-label{font-size: 0.7em; min-width: 48% !important; max-width: 45% !important;}
+
+        .label-size .nome{text-align: left; font-size: 0.7em; padding-left: 0.5rem; width: 100%; margin-left: 1.9rem;}
+        .label-size ion-datetime{text-align: left;  font-size: 0.7em; padding-left: 1.35rem; margin-left: 1.9rem;}
+        .label-size .sexo{text-align: left;  font-size: 0.7em; padding-left: 1.25rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .raca{text-align: left;  font-size: 0.7em; padding-left: 0.5rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .cor-pelagem{text-align: left;  font-size: 0.7em; padding-left: 0.5rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .pelagem{text-align: left;  font-size: 0.7em; padding-left: 1.25rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .temperamento{text-align: left;  font-size: 0.7em; padding-left: 1.3rem; width: 100%; margin-left: 1.9rem;}
+
+        .label-size .peso{text-align: left; font-size: 0.7em; padding-left: 0.45rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .olhos{text-align: left;  font-size: 0.7em; padding-left: 1.25rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .tipo-adestramento{text-align: left; font-size: 0.7em; padding-left: 0.45rem;  width: 100%; margin-left: 1.9rem;}
+        .label-size .outras{text-align: left;  font-size: 0.7em; padding-left: 0.45rem; width: 100%; margin-left: 1.9rem;}
+
+        .label-size .anormalidade{text-align: left;  font-size: 0.7em;  padding-left: 0.45rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .vermifugado-frequencia{text-align: left;  font-size: 0.7em; padding-left: 1.25rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .vacinacao{text-align: left;  font-size: 0.7em; padding-left: 0em; min-width: 50%; margin-left: 0.5rem;}
+        .label-size .obs-medicas{text-align: left;  font-size: 0.7em; padding-left: 0.5rem; width: 100%; margin-left: 1.9rem;}
+
+        .label-size .cio-frequencia{text-align: left;  font-size: 0.7em; padding-left: 1.3rem; width: 100%; margin-left: 1.9rem;}
+        .label-size .cio-duracao{text-align: left;  font-size: 0.7em; padding-left: 0rem; min-width: 43%; margin-left: 2.2rem;}
+    }
+}

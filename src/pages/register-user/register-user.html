@@ -1,0 +1,219 @@
+<ion-header>
+  <ion-navbar>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div text-center>
+        <img class="logo" src="assets/imgs/DOGIN-LOGO-LETRAS.png" alt="Logo da Dogin">
+      </div>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col col-12>
+        <p class="saudacao">{{ 'pages.register-user.greetings' | translate }}</p>
+      <!--
+        <p>
+            <ion-slides autoplay="3000" loop="true" speed="2000">
+                <ion-slide>
+                    <img class="slide-foto" src="assets/imgs/slide/cachorros.jpg" alt="Slide 1 - Cachorros brincando na praia">
+                </ion-slide>
+                <ion-slide>
+                    <img class="slide-foto" src="assets/imgs/slide/cachorros2.jpg" alt="Slide 2 - Cachorros brincando no bosque">
+                </ion-slide>
+                <ion-slide>
+                    <img class="slide-foto" src="assets/imgs/slide/cachorros3.jpg" alt="Slide 3 - Casal sentando com dois cachorros no colo">
+                </ion-slide>
+                <ion-slide>
+                    <img class="slide-foto"src="assets/imgs/slide/cachorros4.jpg" alt="Slide 4 - Garota com dois cachorros nos braços">
+                </ion-slide>
+              </ion-slides>
+        </p>
+
+        <p> {{ 'pages.register-user.typeofregister' | translate }} </p>
+      -->
+      </ion-col>
+      <!--
+      <ion-col col-6 no-padding>
+        <ion-item no-lines>
+          <ion-label class="pet-owner"> {{ 'pages.register-user.petowner' | translate }} </ion-label>
+          <ion-checkbox name="basic" [(ngModel)]="isBasic" checked="isBasic" (ionChange)="changeTypeBasic($event)"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+        
+      <ion-col col-6 no-padding>
+        <ion-item no-lines>
+          <ion-label  class="petshop">Petshop</ion-label>
+          <ion-checkbox name="petshop" [(ngModel)]="isPetShop" checked="isPetShop" (ionChange)="changeTypePetShop($event)"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    -->
+    </ion-row>
+
+    <ion-row>
+
+      <!--
+      <ion-col col-12>
+        <p> {{ 'pages.register-user.enteryourinformation' | translate }} </p>
+      </ion-col>
+    -->
+      <ion-col col-12>
+
+        <form id="common-form" [formGroup]="basicForm" (ngSubmit)="onSubmitForm('basic')" novalidate>
+
+          
+          <ion-item>
+            <ion-input type="text" placeholder="{{ 'pages.register-user.fristname' | translate }}" name="name" [(ngModel)]="user.name"
+              formControlName="name"></ion-input>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.name.dirty && basicForm.controls.name.errors">
+            <div text-center class="alert alert-danger">{{ 'pages.register-user.thenamefieldisrequired' | translate }}</div> 
+          </div>
+
+          <ion-item>
+            <ion-input type="text" placeholder="{{ 'pages.register-user.lastname' | translate }}" name="lastName" [(ngModel)]="user.lastName"
+              formControlName="lastName"></ion-input>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.lastName.dirty && basicForm.controls.lastName.errors">
+            <div text-center class="alert alert-danger">{{ 'pages.register-user.surnamefieldisrequired' | translate }}</div> 
+          </div>
+
+          <ion-item>
+            <ion-input type="email" placeholder="{{ 'pages.register-user.enteryouremail' | translate }}" name='email' [(ngModel)]="user.email"
+              formControlName="email"></ion-input>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.email.errors && basicForm.controls.email.dirty">
+            <div *ngIf="!basicForm.controls.email.errors.emailValid && !basicForm.controls.email.errors.pattern && !basicForm.controls.email.errors.required">
+              <div text-center class="alert alert-info">{{ 'pages.register-user.emailregistred' | translate }}</div> 
+            </div>
+
+            <div *ngIf="basicForm.controls.email.errors.required">
+              <div text-center class="alert alert-danger">{{ 'pages.register-user.emailrequired' | translate }}</div> 
+            </div>
+
+            <div *ngIf="basicForm.controls.email.errors.pattern">
+              <div text-center class="alert alert-danger">e-mail <b>{{user.email}}</b> {{ 'pages.register-user.invalid' | translate }}.</div> 
+            </div>
+
+          </div>
+
+          <div *ngIf="basicForm.controls.email.pending">
+            <div text-center class="alert alert-info">{{ 'pages.register-user.checkingemail' | translate }}</div> 
+          </div>
+
+          <div *ngIf="basicForm.controls.email.valid">
+            <div text-center class="alert alert-success">E-mail <b>{{user.email}}</b> {{ 'pages.register-user.valid' | translate }} </div> 
+          </div>
+
+          <ion-item>
+            <ion-select placeholder="Sexo" [(ngModel)]="user.sex" formControlName="sex" name="sex">
+              <ion-option id="masc" value="M">{{ 'pages.register-user.male' | translate }}</ion-option>
+              <ion-option value="F">{{ 'pages.register-user.female' | translate }}</ion-option>
+              <ion-option value="O">{{ 'pages.register-user.others' | translate }}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.sex.dirty && basicForm.controls.sex.errors">
+            <div text-center class="alert alert-danger">{{ 'pages.register-user.genderrequired' | translate }}</div> 
+          </div>
+
+          <ion-item>
+              <ion-datetime displayFormat="DD MMMM YYYY" [(ngModel)]="user.birthDate" name="birthDate" placeholder="Digite sua data de nascimento" greater-eighteen formControlName="birthDate" ></ion-datetime>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.birthDate.dirty && basicForm.controls.birthDate.errors">
+            <div *ngIf="basicForm.controls.birthDate.errors.required">
+              <div text-center class="alert alert-danger">{{ 'pages.register-user.birthrequired' | translate }}</div> 
+            </div>
+
+            <div *ngIf="basicForm.controls.birthDate.errors.isUnderAge">
+              <div text-center class="alert alert-danger">{{ 'pages.register-user.over18' | translate }}</div> 
+            </div>
+          </div>
+
+          <ion-item>
+            <ion-input type="password" placeholder="{{ 'pages.register-user.enteryourpasswd' | translate }}" [(ngModel)]="user.password" name="password"
+              formControlName="password"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="password" placeholder="{{ 'pages.register-user.confirmpasswd' | translate }}" confirm-password="password" formControlName="reTypePassword"
+              name="reTypePassword"></ion-input>
+          </ion-item>
+
+          <div *ngIf="basicForm.controls.reTypePassword.dirty && basicForm.controls.reTypePassword.errors">
+
+            <div *ngIf="basicForm.controls.reTypePassword.errors.required">
+              <div text-center class="alert alert-danger">{{ 'pages.register-user.passwdandconfirm' | translate }}</div> 
+            </div>
+
+            <div *ngIf="basicForm.controls.reTypePassword.errors.minlength && !basicForm.controls.reTypePassword.errors.required">
+              <div text-center class="alert alert-info">{{ 'pages.register-user.passwd6characters' | translate }}</div> 
+            </div>
+
+            <div *ngIf="basicForm.controls.reTypePassword.errors.notEqual && !basicForm.controls.reTypePassword.errors.required">
+              <div text-center class="alert alert-danger">{{ 'pages.register-user.samepasswd' | translate }}</div>
+            </div>
+
+          </div>
+
+          <ion-item no-lines *ngIf="acceptTerm">
+            <ion-label>
+              <ion-row>
+                <div col-11>{{ 'pages.register-user.termsofuse' | translate }}</div>
+                  <ion-checkbox name="petshop" checked="true" (ionChange)="cancelTerms()"></ion-checkbox>
+              </ion-row>
+            </ion-label>
+          </ion-item>
+
+          <button class="botao-termos-de-uso" ion-button full color="primary-light" *ngIf="!acceptTerm" (click)="openTerms()" type="button">
+              <div>
+                {{ 'pages.register-user.mustaccept' | translate }}<div class="termo-de-uso">{{ 'pages.register-user.termsofuse' | translate }}</div>
+              </div>
+          </button>
+          
+          <button class="cadastrar" ion-button full color="tertiary-light" type="submit" *ngIf="acceptTerm" [disabled]="basicForm.invalid || basicForm.controls.email.pending || !acceptTerm">{{ 'pages.register-user.signup' | translate }}</button>
+        </form>
+      </ion-col>
+
+    </ion-row>
+    <!--
+    <ion-row *ngIf="isPetShop">
+
+      <ion-col col-12>
+        <p>{{ 'pages.register-user.petshopinfos' | translate }}</p>
+      </ion-col>
+
+      <ion-col col-12>
+
+        <form [formGroup]="petShopForm" (ngSubmit)="onSubmitForm('petshop')" novalidate>
+
+          <ion-item>
+            <ion-input type="text" placeholder="{{ 'pages.register-user.fristname' | translate }}" [(ngModel)]="user.name" formControlName="name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="email" placeholder="{{ 'pages.register-user.email' | translate }}" [(ngModel)]="user.email" formControlName="email"></ion-input>
+          </ion-item>
+
+          <button class="botao-termos-de-uso" ion-button full color="primary-light" (click)="openTerms()" type="button">
+            <div>
+              {{ 'pages.register-user.mustaccept' | translate }}<div class="termo-de-uso">{{ 'pages.register-user.termsofuse' | translate }}</div>
+            </div>
+          </button>
+          <button class="cadastrar" ion-button full color="tertiary-light" type="submit">{{ 'pages.register-user.signup' | translate }}</button>
+
+        </form>
+      </ion-col>
+
+    </ion-row>
+    -->
+  </ion-grid>
+
+</ion-content>

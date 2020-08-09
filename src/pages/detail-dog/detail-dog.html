@@ -1,0 +1,484 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      {{dog.name}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+        <ion-slides pager>
+          <img *ngIf="imageDogUrl == 0" src="assets/imgs/dog-gallery.png">
+
+            <ion-slide *ngFor="let image of imageDogUrl" >
+              <img [src]="image">
+            </ion-slide>
+
+        </ion-slides>
+        
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <h2>
+          <span class="nome-top">{{dog.name}} </span> 
+          <ion-icon class="icon-sexo-tamanho" *ngIf="dog.sex == 'male'" name="custom-macho" color="primary"></ion-icon>
+          <ion-icon class="icon-sexo-tamanho" *ngIf="dog.sex == 'female'" name="custom-femea" color="secondary"></ion-icon>
+        </h2> 
+        <h3 class="raca-top"> {{dog.breed}}</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item-group>
+          <ion-item-divider class="label-maior" color="light" (click)="expand('basic', true)" *ngIf="!expandBasic">
+            {{ 'pages.edit-dog.basicInformation' | translate }}
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropdown" ></ion-icon>
+            </button>
+          </ion-item-divider>
+
+          <ion-item-divider class="label-maior" color="light" (click)="expand('basic', false)" *ngIf="expandBasic">
+            {{ 'pages.edit-dog.basicInformation' | translate }}
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropup" ></ion-icon>
+            </button>
+          </ion-item-divider>
+
+          <div *ngIf="expandBasic">
+            <ion-list no-lines class="label-size">
+              <ion-item>
+                <ion-label fixed>{{ 'pages.edit-dog.name' | translate }}: </ion-label>
+                <ion-label class="nome">{{dog.name}}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label fixed>{{ 'pages.edit-dog.age' | translate }}:</ion-label>
+                <ion-label class="idade">{{dog.birthDay | getDateToAge}} {{ 'pages.list-dogs.years' | translate }} </ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label fixed>{{ 'pages.edit-dog.sex' | translate }}: </ion-label>
+                <ion-label class="sexo">
+
+                  <div *ngIf="dog.sex == 'male'">
+                    {{ 'pages.edit-dog.sex-male' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.sex == 'female'">
+                    {{ 'pages.edit-dog.sex-female' | translate }}
+                  </div>
+
+                </ion-label>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label fixed>{{ 'pages.edit-dog.breed' | translate }}: </ion-label>
+                <ion-label class="raca">{{dog.breed}}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label fixed>{{ 'pages.edit-dog.fur-color' | translate }}:</ion-label>
+                <ion-label class="cor-pelagem">{{dog.fur}}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label fixed>{{ 'pages.edit-dog.fur-type' | translate }}: </ion-label>
+                <ion-label class="pelagem">
+
+                  <div *ngIf="dog.furType == 'short'">
+                      {{ 'pages.edit-dog.fur-type-short' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.furType == 'average'">
+                    {{ 'pages.edit-dog.fur-type-average' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.furType == 'long'">
+                    {{ 'pages.edit-dog.fur-type-long' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.furType == 'curly'">
+                    {{ 'pages.edit-dog.fur-type-curly' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.furType == 'double'">
+                    {{ 'pages.edit-dog.fur-type-double' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.furType == 'hard'">
+                    {{ 'pages.edit-dog.fur-type-hard' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.furType == 'others'">
+                    {{ 'pages.edit-dog.fur-type-others' | translate }}
+                  </div>
+
+                </ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label fixed>{{ 'pages.edit-dog.temperament' | translate }}: </ion-label>
+                <ion-label class="temperamento">
+
+                  <div *ngIf="dog.temperament == 'playful'">
+                    {{ 'pages.edit-dog.temperament-playful' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.temperament == 'docile'">
+                    {{ 'pages.edit-dog.temperament-docile' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.temperament == 'dependent'">
+                    {{ 'pages.edit-dog.temperament-dependent' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.temperament == 'fearful'">
+                    {{ 'pages.edit-dog.temperament-fearful' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.temperament == 'territorial'">
+                    {{ 'pages.edit-dog.temperament-territorial' | translate }}
+                  </div>
+
+                  <div *ngIf="dog.temperament == 'angry'">
+                    {{ 'pages.edit-dog.temperament-angry' | translate }}
+                  </div>
+
+                </ion-label>
+              </ion-item>
+
+            </ion-list>
+
+          </div>
+
+          <ion-item-divider class="label-maior" color="light" (click)="expand('complement', true)" *ngIf="!expandComplement">
+            {{ 'pages.edit-dog.complementary-information' | translate }}
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropdown" ></ion-icon>
+            </button>
+          </ion-item-divider>
+
+          <ion-item-divider class="label-maior" color="light" (click)="expand('complement', false)" *ngIf="expandComplement">
+            {{ 'pages.edit-dog.complementary-information' | translate }}
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropup" ></ion-icon>
+            </button>
+          </ion-item-divider>
+
+          <div *ngIf="expandComplement">
+
+            <ion-list no-lines class="label-size">
+
+              <div *ngIf="dog.weight ">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.weight' | translate }}: </ion-label>
+                  <ion-label class="peso">{{dog.weight}} Kg</ion-label>
+                </ion-item>
+              </div>
+              
+              <div *ngIf="dog.eyeColor">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.eye-color' | translate }}: </ion-label>
+                  <ion-label class="olhos">
+                    
+                    <div *ngIf="dog.eyeColor == 'blue'">
+                      {{ 'pages.edit-dog.eye-color-blue' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.eyeColor == 'brown'">
+                      {{ 'pages.edit-dog.eye-color-brown' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.eyeColor == 'twoColors'">
+                      {{ 'pages.edit-dog.eye-color-two-colors' | translate }}
+                    </div>
+                    
+                  </ion-label>
+                </ion-item>
+              </div>
+
+              <div *ngIf="dog.pedigree">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.pedigree' | translate }}: </ion-label>
+                  <ion-label class="pedigree">
+                    
+                    <div *ngIf="dog.pedigree">
+                      {{ 'pages.edit-dog.yes' | translate }}
+                    </div>
+                    
+                    <div *ngIf="!dog.pedigree">
+                      {{ 'pages.edit-dog.no' | translate }}
+                    </div>
+                    
+                  </ion-label>
+                </ion-item>
+              </div>  
+
+              <div *ngIf="dog.dressage">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.dressage' | translate }}: </ion-label>
+                  <ion-label  class="adestramento">
+                    
+                    <div *ngIf="dog.dressage">
+                      {{ 'pages.edit-dog.yes' | translate }}
+                    </div>
+                    
+                    <div *ngIf="!dog.dressage">
+                      {{ 'pages.edit-dog.no' | translate }}
+                    </div>
+                    
+                  </ion-label>
+                </ion-item>
+              </div>
+
+              <div *ngIf="dog.typeDressage">
+                <ion-item *ngIf="dog.dressage">
+                  <ion-label fixed>{{ 'pages.edit-dog.dressage-type' | translate }}: </ion-label>
+                  <ion-label class="tipo-adestramento">{{dog.typeDressage}}</ion-label>
+                </ion-item>
+              </div>  
+
+              <div *ngIf="dog.otherFeatureght">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.other-features' | translate }}: </ion-label>
+                  <ion-label class="outras">{{dog.otherFeatureght}}</ion-label>
+                </ion-item>
+              </div>
+
+            </ion-list>
+          </div>
+
+          <ion-item-divider class="label-maior" color="light" (click)="expand('medic', true)" *ngIf="!expandMedic">
+            {{ 'pages.edit-dog.medical-information' | translate }}
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropdown" ></ion-icon>
+            </button>
+          </ion-item-divider>
+
+          <ion-item-divider class="label-maior" color="light" (click)="expand('medic', false)" *ngIf="expandMedic">
+            {{ 'pages.edit-dog.medical-information' | translate }}
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropup" ></ion-icon>
+            </button>
+          </ion-item-divider>
+
+          <div *ngIf="expandMedic">
+            <ion-list no-lines class="label-size">
+              <div *ngIf="dog.abnormality">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.abnormality' | translate }}: </ion-label>
+                  <ion-label class="anormalidade">{{dog.abnormality}}</ion-label>
+                </ion-item> 
+              </div>
+
+              <div *ngIf="dog.worming">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.worming' | translate }}: </ion-label>
+                  <ion-label class="vermifugado">
+                    <div *ngIf="dog.worming">
+                      {{ 'pages.edit-dog.yes' | translate }}
+                    </div>
+                    
+                    <div *ngIf="!dog.worming">
+                      {{ 'pages.edit-dog.no' | translate }}
+                    </div>
+                  </ion-label>
+                </ion-item>
+              </div>
+
+              <div *ngIf="dog.wormingFrequency">
+                <ion-item *ngIf="dog.worming === 'true'">
+                  <ion-label fixed>{{ 'pages.edit-dog.worming' | translate }}: </ion-label>
+                  <ion-label class="vermifugado-frequencia">
+                    
+                    <div *ngIf="dog.wormingFrequency == 'threeMonth'">
+                      {{ 'pages.edit-dog.date-three-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'fourMonth'">
+                      {{ 'pages.edit-dog.date-four-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'fiveMonth'">
+                      {{ 'pages.edit-dog.date-five-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'sixMonth'">
+                      {{ 'pages.edit-dog.date-six-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'sevenMonth'">
+                      {{ 'pages.edit-dog.date-seven-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'eightMonth'">
+                      {{ 'pages.edit-dog.date-eight-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'nineMonth'">
+                      {{ 'pages.edit-dog.date-nine-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'tenMonth'">
+                      {{ 'pages.edit-dog.date-ten-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'elevenMonth'">
+                      {{ 'pages.edit-dog.date-eleven-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'twelveMonth'">
+                      {{ 'pages.edit-dog.date-twelve-month' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.wormingFrequency == 'random'">
+                      {{ 'pages.edit-dog.date-random' | translate }}
+                    </div>
+                    
+                  </ion-label>
+                </ion-item>
+              </div>
+
+              <div *ngIf="dog.vaccination">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.vaccination' | translate }}: </ion-label>
+                  <ion-label class="vacinacao">
+                    
+                    <div *ngIf="dog.vaccination == 'upToDate'">
+                      {{ 'pages.edit-dog.up-to-date' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.vaccination == 'someDelayed'">
+                      {{ 'pages.edit-dog.some-delayed' | translate }}
+                    </div>
+                    
+                    <div *ngIf="dog.vaccination == 'delayed'">
+                      {{ 'pages.edit-dog.delayed' | translate }}
+                    </div>
+                    
+                  </ion-label>
+                </ion-item>
+              </div>
+              
+              <div *ngIf="dog.medicalObs">
+                <ion-item>
+                  <ion-label fixed>{{ 'pages.edit-dog.medical-observation' | translate }}: </ion-label>
+                  <ion-label class="obs-medicas">{{dog.medicalObs}}</ion-label>
+                </ion-item>
+              </div>
+
+            </ion-list>
+          </div>
+
+          <div *ngIf="dog.sex === 'female'">
+            <ion-item-divider class="label-maior" color="light" (click)="expand('heat', true)" *ngIf="!expandHeat">
+              {{ 'pages.edit-dog.heat-information' | translate }}
+              <button item-content ion-button icon-only clear >
+                <ion-icon name="arrow-dropdown" ></ion-icon>
+              </button>
+            </ion-item-divider>
+
+            <ion-item-divider class="label-maior" color="light" (click)="expand('heat', false)" *ngIf="expandHeat">
+              {{ 'pages.edit-dog.heat-information' | translate }}
+              <button item-content ion-button icon-only clear >
+                <ion-icon name="arrow-dropup" ></ion-icon>
+              </button>
+            </ion-item-divider>
+            
+            <div *ngIf="expandHeat">
+              <ion-list no-lines class="label-size">
+                <div *ngIf="dog.lastHeat">  
+                  <ion-item>
+                    <ion-label fixed>{{ 'pages.edit-dog.date-last-heat' | translate }}:</ion-label>
+                    <ion-label class="cio-data"> {{dog.lastHeat}}</ion-label>
+                  </ion-item>
+                </div>
+                
+                <div *ngIf="dog.heatFrequency">
+                  <ion-item>
+                    <ion-label fixed>{{ 'pages.edit-dog.heat-frequency' | translate }}: </ion-label>
+                    <ion-label class="cio-frequencia">
+                      
+                      <div *ngIf="dog.heatFrequency == 'doNotKnow'">
+                        {{ 'pages.edit-dog.do-not-know' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatFrequency == 'fiveMonth'">
+                        {{ 'pages.edit-dog.date-five-month' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatFrequency == 'sixMonth'">
+                        {{ 'pages.edit-dog.date-six-month' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatFrequency == 'sevenMonth'">
+                        {{ 'pages.edit-dog.date-seven-month' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatFrequency == 'eightMonth'">
+                        {{ 'pages.edit-dog.date-eight-month' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatFrequency == 'nineMonth'">
+                        {{ 'pages.edit-dog.date-nine-month' | translate }}
+                      </div>
+                      
+                    </ion-label>
+                  </ion-item>
+                </div>
+
+                <div *ngIf="dog.heatDuration">
+                  <ion-item>
+                    <ion-label fixed>{{ 'pages.edit-dog.heat-duration' | translate }}: </ion-label>
+                    <ion-label class="cio-duracao">
+                      
+                      <div *ngIf="dog.heatDuration == 'doNotKnow'">
+                        {{ 'pages.edit-dog.do-not-know' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatDuration == 'oneWeek'">
+                        {{ 'pages.edit-dog.one-week' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatDuration == 'twoWeeks'">
+                        {{ 'pages.edit-dog.two-week' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatDuration == 'threeWeeks'">
+                        {{ 'pages.edit-dog.three-week' | translate }}
+                      </div>
+                      
+                      <div *ngIf="dog.heatDuration == 'fourWeeks'">
+                        {{ 'pages.edit-dog.four-week' | translate }}
+                      </div>
+                      
+                    </ion-label>
+                  </ion-item>
+                </div>
+                
+              </ion-list>
+            </div>
+          </div>
+        </ion-item-group>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer text-center no-border>
+    <button style="display: inline-block" class="botao-curti" ion-button full round (click)="like()">
+        <ion-icon slot="start" name="thumbs-up"></ion-icon>
+    </button>
+</ion-footer>

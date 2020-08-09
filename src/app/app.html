@@ -1,0 +1,273 @@
+<!-- Splash Screen -->
+<div *ngIf='showSplash' class="splash"> 
+    <div class="spinner">
+        <img src="assets/imgs/coracao-splash.svg" alt="">
+    </div>
+</div>
+
+<ion-menu [content]="content" [class]="user.theme" id="menu-left" side="left">
+    <ion-content class="conteudo">
+
+        <div class="menu-header">
+            <!--material-design-background-->
+            <div class="background-side-menu"></div>
+            <div class="icon-voltar-side-menu">
+                <ion-icon name="return-right" item-left></ion-icon>
+            </div>
+            <div class="profile-side-menu">
+                <div class="avatar-side-menu">
+                    <img *ngIf="!profileImage" src="assets/imgs/dog-recuperar.jpg" alt="Imagem de perfil">
+                    <img *ngIf="profileImage" [src]="profileImage" alt="Imagem de perfil">
+                </div>
+
+            </div>
+            <div class="dados-side-menu">
+                <p>{{user?.name}}</p>
+                {{ 'side-menu.owns' | translate }}
+                <span class="numero-dogs-side-menu">{{numberOfDogs}}</span>
+                {{ 'side-menu.dogs' | translate }}
+            </div>
+
+        </div>
+
+        <ion-list class="lista-side-menu">
+            <ng-container *ngFor="let p of pages">
+                <button no-lines class="pages-side-menu" menuClose="left" ion-item detail-none [class.highlight]="p.active"
+                    (click)="openPage(p)" *ngIf="p.canAccess">
+                    <ion-icon [name]="p.icon" item-left></ion-icon>
+                    {{p.title | translate}}
+                </button>
+            </ng-container>
+            <button class="botao-sair-side-menu" ion-item detail-none (click)="logout()">
+                <ion-icon name="log-out" item-left></ion-icon>
+                {{ 'side-menu.logout' | translate }}
+            </button>
+
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+
+<ion-menu [content]="content" [class]="user.theme" id="menu-right" side="right">
+    <!--
+
+        <ion-header class="header-menu" no-border>
+            <ion-row>
+                <ion-col col-4>
+                    <ion-list>
+                        <ion-item>
+                            <span class="title-header" (click)="clear()">Limpar</span>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col col-4>
+                    <ion-list>
+                        <ion-item>
+                            <span class="title-header-centered">Filtros</span>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col col-4>
+                    <ion-list>
+                        <ion-item>
+                            <span class="title-header" (click)="selectFilters(search)">Pronto</span>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+        </ion-header>
+    -->
+
+    <!-- FILTRO POR NOME DO CÃO - OK -->
+    <!-- FILTRO POR TEMPERAMENTO - OK -->
+    <!-- FILTRO POR RAÇA -  -->
+    <!-- FILTRO POR SEXO - OK -->
+    <!-- FILTRO POR IDADE - OK -->
+    <!-- FILTRO POR PESO - OK -->
+    <!-- FILTRO POR ADESTRAMENTO -  -->
+    <!-- FILTRO POR PELAGEM  -  -->
+    <!-- FILTRO POR TAMANHO DO PELO -  -->
+    <ion-content class="label-size background-buscar">
+        <form [formGroup]="paramsSearchForm">
+
+            <ion-row>
+                
+                <ion-col col-12>
+                    <h4 class="label-color" text-center style="margin-top:10px">Filtro de busca</h4>
+                </ion-col>
+                
+                <ion-col col-12>
+                    <ion-searchbar placeholder="Nome do dog" [(ngModel)]="paramsForSearch.name" formControlName="name" name="name"></ion-searchbar>
+                </ion-col>
+                
+            </ion-row>
+            
+            <ion-row>
+
+                <!--
+                <ion-col>
+
+                    <ion-item (click)="expandeAgeOrWeight(true)" *ngIf="answer == null">
+                        Intervalo de idade
+                        <button item-content ion-button icon-only clear >
+                            <ion-icon name="arrow-dropdown" ></ion-icon>
+                        </button>
+                    </ion-item>
+
+                    <ion-item (click)="expandeAgeOrWeight(null)" *ngIf="answer">
+                        Intervalo de idade
+                        <button item-content ion-button icon-only clear >
+                            <ion-icon name="arrow-dropup" ></ion-icon>
+                        </button>
+                    </ion-item>
+
+                </ion-col>
+                -->
+
+                <div *ngIf="answer">
+                    
+                    <ion-col col-5 text-center>
+                        <ion-item class="myItem">
+                            <ion-label class="min">MIN</ion-label>
+                            <ion-input class="myInput min" name="min_age" formControlName="min_age" type="number" [(ngModel)]="paramsForSearch.min_age"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    
+                    <ion-col col-5 text-center>
+                        <ion-item class="myItem">
+                            <ion-label class="max">MAX</ion-label>
+                            <ion-input class="myInput max" name="max_age" formControlName="max_age" type="number" [(ngModel)]="paramsForSearch.max_age"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </div>
+<!--
+                <ion-col>
+                    <ion-item (click)="expandeAgeOrWeight(false)" *ngIf="answer == null">
+                        Intervalo de peso
+                        <button item-content ion-button icon-only clear >
+                            <ion-icon name="arrow-dropdown" ></ion-icon>
+                        </button>
+                    </ion-item>
+
+                    <ion-item (click)="expandeAgeOrWeight(null)" *ngIf="answer == false">
+                        Intervalo de peso
+                        <button item-content ion-button icon-only clear >
+                            <ion-icon name="arrow-dropup" ></ion-icon>
+                        </button>
+                    </ion-item>
+                </ion-col>
+-->
+                <div *ngIf="answer == false">
+                    
+                    <ion-col col-6>
+                        <ion-item class="myItem">
+                            <ion-label class="min">MIN</ion-label>
+                            <ion-input class="myInput min" name="min_weight" formControlName="min_weight" type="number" [(ngModel)]="paramsForSearch.min_weight"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    
+                    <ion-col col-6>
+                        <ion-item class="myItem">
+                            <ion-label class="max">MAX</ion-label>
+                            <ion-input class="myInput max" name="max_weight" formControlName="max_weight" type="number" [(ngModel)]="paramsForSearch.max_weight"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </div>                    
+                    
+                    <ion-col col-12>
+                        <ion-item>
+                        <ion-label class="topicos">Raça do Dog:</ion-label>
+                        <ion-input class="filtros raca" name="breed" formControlName="breed" type="text" [(ngModel)]="paramsForSearch.breed"></ion-input>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Estado do Cio:</ion-label>
+                        <ion-toggle class="filtros" color="energized" name="statusHeat" formControlName="statusHeat" [(ngModel)]="paramsForSearch.statusHeat"></ion-toggle>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Pedigree:</ion-label>
+                        <ion-toggle class="filtros" color="energized" name="pedigree" formControlName="pedigree" [(ngModel)]="paramsForSearch.pedigree"></ion-toggle>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Sexo:</ion-label>
+                        <ion-select class="filtros sexo" name="sex" formControlName="sex" [(ngModel)]="paramsForSearch.sex">
+                            <ion-option value="male">Masculino</ion-option>
+                            <ion-option value="female">Feminino</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Temperamento:</ion-label>
+                        <ion-select class="filtros temperamento" name="temperament" formControlName="temperament" [(ngModel)]="paramsForSearch.temperament">
+                            <ion-option value="playful">Brincalhão</ion-option>
+                            <ion-option value="docile">Docíl</ion-option>
+                            <ion-option value="faddist">Dengoso</ion-option>
+                            <ion-option value="fearful">Medroso</ion-option>
+                            <ion-option value="territorialist">Territorialista</ion-option>
+                            <ion-option value="angry">Bravo</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Adestramento:</ion-label>
+                        <ion-toggle class="filtros" color="energized" name="dressage" formControlName="dressage" [(ngModel)]="paramsForSearch.dressage"></ion-toggle>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Cor da Pelagem:</ion-label>
+                        <ion-input class="filtros cor-pelagem" name="fur" formControlName="fur" type="text" [(ngModel)]="paramsForSearch.fur"></ion-input>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Pelagem:</ion-label>
+                        <ion-select class="filtros pelagem" name="furType" formControlName="furType" [(ngModel)]="paramsForSearch.furType">
+                            <ion-option value="short">Curta</ion-option>
+                            <ion-option value="average">Média</ion-option>
+                            <ion-option value="long">Longa</ion-option>
+                            <ion-option value="curly">Encaracolado</ion-option>
+                            <ion-option value="double">Dupla</ion-option>
+                            <ion-option value="hard">Dura</ion-option>
+                            <ion-option value="others">Outras</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Vermifugação:</ion-label>
+                        <ion-toggle class="filtros" name="worming"  formControlName="worming" [(ngModel)]="paramsForSearch.worming"></ion-toggle>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label class="topicos">Vacinação:</ion-label>
+                        <ion-select  class="filtros vacinacao" name="vaccination" formControlName="vaccination" [(ngModel)]="paramsForSearch.vaccination">
+                            <ion-option value="upToDate">Em dia</ion-option>
+                            <ion-option value="someDelayed">Algumas Atrasadas</ion-option>
+                            <ion-option value="delayed">Atrasado</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    
+                </ion-col>
+                
+            </ion-row>
+            
+        </form>
+            <div text-center>
+                <ion-row style="margin-left: 3%;">
+                    <ion-col col-6>
+                            <button class="edit-dog-botao" color="danger-light" ion-button (click)="clear()">Limpar</button>
+                    </ion-col>
+                    
+                    <ion-col col-6>
+                        <button class="edit-dog-botao edit-dog-salvar" ion-button (click)="selectFilters()"> Aplicar</button>
+                    </ion-col>
+                    
+                </ion-row>
+            </div>
+            
+        </ion-content>
+        
+</ion-menu>
+
+
+<ion-nav id="nav" #content [root]="rootPage" [class]="user.theme" swipeBackEnabled="false"></ion-nav>

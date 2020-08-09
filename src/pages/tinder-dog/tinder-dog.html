@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tinder Dog</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div swing-stack #mySwingStack [stackConfig]="stackConfig" (throwoutleft)="voteUp(false)" (throwoutright)="voteUp(true)" id="card-stack">
+    <ion-card #mySwingCard swing-card *ngFor="let dog of listDogs" class="td-card">
+      <ion-item>
+        <img *ngIf="dog.profilePicture" [src]="dog.picture">
+        <h1>{{ dog.name }}</h1>
+        <p>{{ dog.sex }}</p> 
+      </ion-item>
+      <ion-card-content>
+        <h3>{{ dog.temperament }}</h3>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="tinder-footer">
+    <div id="swipe_dislike" class="rate" (click)="voteUp(false)"></div>
+    <div class="info"></div>
+    <div id="swipe_like" class="rate" (click)="voteUp(true)"></div>
+  </div>
+</ion-footer>

@@ -1,0 +1,26 @@
+.md, .ios {
+    page-login {
+
+        $font-family-base: 'Exo 2', sans-serif;
+    
+        ion-content { background: radial-gradient(#fff, #D3D3D3); }
+        ion-label{ color: lightgray; }
+    
+        .logo{ width: 60%; height: 60%; align-items: center; }
+        .frase{font-family: Good dog !important; font-size: 1.5em; margin-top: 0; color: #81b835; padding: 0}
+    
+        .botao {font: 100% ; text-align: center; }
+        .botao-entrar{width: 10em; height: 2.5em; margin-bottom: 1em; border-radius: 0.8em;}
+        .botao-esqueci-senha{font-size: 1em; margin-top: 1em; color: #16b316;}
+        .botao-cadastrar-margin{margin-top: 0em;}
+        .botao-cadastrar{font-size: 115%; height: 1em; margin-bottom: 0.8em; padding: 0; color: #ff8fe3;}
+    
+        .icones-redes{width: 10%; height: 10%; margin-right: 0.2em;}
+        .redes-sociais-mensagem{font-size: 0.8em; margin-bottom: 0.5em;}
+    
+        #form ion-item {font-size: 1em; border: thin solid; border-radius: 1em; height: 1em; background-color: transparent; color: #9b9b9b; margin-bottom: 2%;}
+        #form ion-label { font-size: 1em; font-weight: 900; color: #bdbdbd; margin-right: 0; max-width: 24%; min-width: 24%; }
+        
+    }
+    
+}

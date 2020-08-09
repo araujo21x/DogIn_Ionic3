@@ -1,0 +1,38 @@
+
+.md, .ios{
+
+    page-register-user {
+
+            ion-content{background: white;}
+            ion-navbar.toolbar {min-height: 8em; background-color: black; }
+            .logo{ width: 60%; height: 60%; align-items: center;}
+            .saudacao{text-align: center; font-size: 1.3em; color:#16b316}
+            .pet-owner{color: color($colors, primary);}
+            .petshop{color: color($colors, secondary);}
+            
+            .slide-foto{
+                -webkit-border-radius: 15%; border-radius: 15%;
+                border: 2px solid #9ddeee;
+                border-radius: 30%;
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .alert{padding: 0.3em; margin-top: 0.8em; margin-bottom: 0.8em; border: 0.1em solid transparent; border-radius: 1em;}
+            .alert-danger{color: #a94442; background-color: #f2dede; border-color: #ebccd1;}
+            .alert-info{color: #31708f; background-color: #d9edf7; border-color: #bce8f1;}
+            .alert-success {color: #3c763d; background-color: #dff0d8;border-color: #d6e9c6;}
+
+            button{border-radius: 0.6em !important; padding-top: 0.3em; margin: 0;}
+            ion-checkbox{margin: 0 !important; text-align: right; }
+            .botao-termos-de-uso{font-size: 0.8em; height: 4em; padding: 2.2em; margin-top: 1em;}
+            .termo-de-uso{font-size: 1.5em; padding-top: 0.4em; color: yellow;}
+            .cadastrar{font-size: 1.3em; width: 7em; height: 2em; margin-left: auto; margin-right: auto; display: block !important;}
+            
+            ion-navbar.toolbar{min-height: 100%; background: white;}
+            .toolbar-background{background-color: white; border: none;}
+            .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{color: #008cff;}
+            .bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default{color: #008cff;}
+    }
+}

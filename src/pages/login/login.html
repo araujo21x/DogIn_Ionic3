@@ -1,0 +1,45 @@
+<ion-content padding>
+  <form id="form" [formGroup]="loginForm" (submit)="login()" novalidate>
+
+    <div text-center>
+      <img class="logo" src="assets/imgs/DOGIN-LOGO.png" alt="Logo da Dogin">
+      <h1 class="frase">{{ 'pages.login.description1' | translate }}<br>{{ 'pages.login.description2' | translate }}</h1>
+    </div>
+
+    <ion-item>
+      <ion-label fixed>{{ 'pages.login.email' | translate }}</ion-label>
+      <ion-input name="email" formControlName="email" type="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label fixed>{{ 'pages.login.password' | translate }}</ion-label>
+      <ion-input name="password" formControlName="password" type="password"></ion-input>
+    </ion-item>
+
+    <div text-center>
+      <button class="botao botao-entrar" ion-button color="primary" type="submit" [disabled]="!loginForm.valid"S >
+        {{ 'pages.login.enter' | translate}}
+        </button>
+    </div>
+
+  </form>
+    
+  <div class="icones-redes-padding" text-center>
+      <div class="redes-sociais-mensagem">{{ 'pages.login.socialnetworks' | translate }}</div>
+      <img class="icones-redes" src="assets/imgs/icone-face.png" alt="Ícone para logar com o Facebook">
+      <img class="icones-redes" src="assets/imgs/icone-google.png" alt="Ícone para logar com o Google">
+      <img class="icones-redes" src="assets/imgs/icone-insta.png" alt="Ícone para logar com o Instagram">
+  </div>
+
+  <button class="botao-esqueci-senha" ion-button block clear (click)="goTorRecoverPassword()">
+    {{ 'pages.login.lostpassword' | translate }}
+  </button>
+
+  <div class="botao-cadastrar-margin" text-center>
+      {{ 'pages.login.noaccount' | translate }}
+        <button class="botao botao-cadastrar" clear ion-button (click)="goToRegister()">
+          {{ 'pages.login.register' | translate }}
+        </button>
+    </div>
+
+</ion-content>

@@ -1,0 +1,123 @@
+.dark-theme{
+    .lista-side-menu{background: #757575 !important;}
+    ion-content{background: #757575;}
+    
+    //Background dos headers
+    .toolbar-background{background-color:#3d3d3d;}
+
+    //Background do side menu
+    .background-side-menu{background-color: #474747;}
+
+    //Side menu
+    .pages-side-menu{color: white;}
+    .pages-side-menu ion-icon{color: white;}
+
+    //list dog/edit dog
+    .botao-add{background: #474747;}
+    .botao-add:hover{background-color: #474747 !important;}
+    .list-dog-nome{color: white;}
+    .list-dog-raca{color: #e6e6e6;}
+    .list-dog-nascimento{color: #d1d0d0;}
+    .list-dog-peso{color: #c9c9c9;}
+    .nome-top{color: white;}
+    .raca-top{color:  #e2e2e2; font-size: 1.1em;}
+    .label-size ion-label{font-size: 0.7em; min-width: 48% !important; max-width: 45% !important; color: white;}
+    ion-item-divider{color: white;}
+    .cio-estado-label{color: white;}
+
+    .raca-top{font-size: 1.1em;}
+    .label-size ion-label{font-size: 0.7em; min-width: 48% !important; max-width: 45% !important;}
+    .label-size .nome{color: #e2e2e2;}
+    .label-size ion-datetime{color: #e2e2e2;}
+    .label-size .sexo{color: #e2e2e2 !important;}
+    .label-size .raca{color: #e2e2e2;}
+    .label-size .cor-pelagem{color: #e2e2e2;}
+    .label-size .pelagem{color: #e2e2e2 !important;}
+    .label-size .temperamento{color: #e2e2e2 !important;}
+
+    .label-size .peso{color: #e2e2e2;}
+    .label-size .olhos{color: #e2e2e2 !important;}
+    .label-size .tipo-adestramento{color: #e2e2e2;}
+    .label-size .outras{color: #e2e2e2;}
+
+    .label-size .anormalidade{color: #e2e2e2;}
+    .label-size .vermifugado-frequencia{color: #e2e2e2;}
+    .label-size .vacinacao{color: #e2e2e2;}
+    .label-size .obs-medicas{color: #e2e2e2;}
+
+    .label-size .cio-data{color: #e2e2e2;}
+    .label-size .cio-frequencia{color: #e2e2e2;}
+    .label-size .cio-duracao{color: #e2e2e2;}
+
+    
+
+    //Cadastrar dog
+    .tema{color: #474747;}
+    .swiper-pagination-bullet-active{background:#474747;}
+    .botao-prev-next{color:#474747; font-size: 0.6em;}
+    .x-button{background:#474747;}
+
+    //Edit dog
+    .edit-dog-botao{
+        border-radius: 0.6em !important;
+        font-size: 1em;
+        margin-top: 1em;
+        width: 8em;
+        height: 3em;
+        display: block !important;
+    }
+    .button-clear-md{color: #474747;}
+    .button-clear-ios{color: #474747;}
+    .edit-dog-salvar{background: #474747;}
+    .edit-dog-salvar:hover{background-color: #474747 !important;}
+    .toggle .toggle-inner{background-color: #474747;}
+    .toggle.toggle-checked .toggle-inner{background-color: #e2e2e2;}
+    .toggle-md.toggle-checked .toggle-icon{background-color: #cacaca;}
+    .toggle-ios.toggle-checked .toggle-icon{background-color: #cacaca;}
+
+    //Edit user
+    .alterar-dados{background: #474747;}
+    .alterar-dados:hover{background-color: #474747 !important;}
+    .avatar{border: 5px solid  #474747;}  
+
+    //Buscar dog
+    .filtros-selecionados{color: white;}
+    .dogs-encontrados{color: white;}
+    .select-md .select-icon .select-icon-inner{color: #474747;}
+    .select-ios .select-icon .select-icon-inner{color: #474747;}
+    .label-color{color: white;}
+    .topicos{color: #e2e2e2 !important;}
+    ion-input{color: #e2e2e2 !important;}
+    ion-toggle{color: #e2e2e2 !important;}
+    ion-select{color: #e2e2e2 !important;}
+    .filtros{color: white;}
+
+    //Detail dog
+    .label-size .pedigree{color: #e2e2e2;}
+    .label-size .adestramento{color: #e2e2e2;}
+    .label-size .vermifugado{color: #e2e2e2;}
+    .label-size .idade{color: #e2e2e2;}
+    .botao-curti{background-color: #474747;}
+
+    //Home
+    .label .label-md h2{color: white !important;}
+    .list-md ion-item-sliding{background-color: #999999; border-radius: 1.5em;}
+    .list-ios ion-item-sliding{background-color: #999999; border-radius: 1.5em;}
+    .notificacao-destaque{color: white;}
+    .label-notificacoes{color: white;}
+
+    //App Guide
+    .guide-texto{color: white;}
+
+    //Sobre
+    .about-background{background: white !important}
+    .about-logo{width: 70%; height: auto;}
+
+    //Termos
+    .about-background{background: white !important}
+
+    //Fale conosco
+    .contact-topicos{color: #e2e2e2 !important}
+    .contact-botao-enviar{background-color: #474747; border-radius: 0.7em; margin-top: 1em;}
+
+}

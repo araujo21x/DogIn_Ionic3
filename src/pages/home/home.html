@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-label text-center class="label-notificacoes">Notificações:</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+        <ion-item-group>
+          <ion-item-divider no-lines class="notificacao-topico-margem" color="light" (click)="expand('myInterest', true)" *ngIf="!expandMyInterest">
+            <ion-label class="notificacao-topico">Dogs do meu interesse</ion-label> 
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropdown" ></ion-icon>
+            </button>
+          </ion-item-divider>
+
+          <ion-item-divider no-lines color="light" (click)="expand('myInterest', false)" *ngIf="expandMyInterest">
+              <ion-label class="notificacao-topico">Dogs do meu interesse</ion-label> 
+            <button item-content ion-button icon-only clear >
+              <ion-icon name="arrow-dropup" ></ion-icon>
+            </button>
+          </ion-item-divider>
+        </ion-item-group>
+
+          <ion-list>
+            <div *ngIf="expandMyInterest">
+              <ion-item-sliding text-wrap *ngFor="let sendLike of list">
+                
+                <ion-item *ngIf="sendLike.answer == true">
+                  
+                  <h2>
+                    <span class="notificacao-destaque">{{sendLike.uidSend.name}}</span>, dono do dog
+                    <span class="notificacao-destaque">{{sendLike.uidDog.name}}</span>, aprovou seu "gostei"
+                    e diz: <br>
+                    <span style="text-align: justify" class="notificacao-destaque">"{{sendLike.replyMessage}}".</span>
+                  </h2>
+                  
+                  <ion-avatar item-start>
+                    <img [src]="sendLike.uidDog.imgDogProfile"/>
+                  </ion-avatar>
+                  
+                </ion-item>
+  
+              </ion-item-sliding>
+
+            </div>
+
+          </ion-list>
+
+          <ion-item-group>
+            <ion-item-divider no-lines color="light" (click)="expand('interestedInMe', true)" *ngIf="!expandInterestedInMe">
+              <ion-label class="notificacao-topico">interessados nos meus dogs</ion-label> 
+              <button item-content ion-button icon-only clear >
+                <ion-icon name="arrow-dropdown" ></ion-icon>
+              </button>
+            </ion-item-divider>
+  
+            <ion-item-divider no-lines color="light" (click)="expand('interestedInMe', false)" *ngIf="expandInterestedInMe">
+                <ion-label class="notificacao-topico">interessados nos meus dogs</ion-label> 
+              <button item-content ion-button icon-only clear >
+                <ion-icon name="arrow-dropup" ></ion-icon>
+              </button>
+            </ion-item-divider>
+          </ion-item-group>
+          
+          <ion-list>
+            <div *ngIf="expandInterestedInMe">
+
+              
+              <ion-item-sliding text-wrap *ngFor="let receiveLike of list">
+                
+                <ion-item *ngIf="receiveLike.status == 'positive' && receiveLike.answer == false ">
+                  <ion-avatar item-start>
+                    <img [src]="receiveLike.uidDog.imgDogProfile" />
+                  </ion-avatar>
+                  
+                  <h2>
+                    <span class="notificacao-destaque">{{receiveLike.uidSend.name}}</span> gostou de 
+                    <span class="notificacao-destaque">{{receiveLike.uidDog.name}}</span> e você aprovou
+                    a mensagem: <br>
+                    <span style="text-align: justify" class="notificacao-destaque">"{{receiveLike.message}}"</span>.
+                  </h2> 
+                </ion-item>
+
+              </ion-item-sliding>
+            </div>
+
+          </ion-list>
+
+          <ion-item-group>
+            <ion-item-divider no-lines color="light" (click)="expand('opened', true)" *ngIf="!expandOpened">
+              <ion-label class="notificacao-topico">Em abertos</ion-label> 
+              <button item-content ion-button icon-only clear >
+                <ion-icon name="arrow-dropdown" ></ion-icon>
+              </button>
+            </ion-item-divider>
+  
+            <ion-item-divider no-lines color="light" (click)="expand('opened', false)" *ngIf="expandOpened">
+              <ion-label class="notificacao-topico">Em abertos</ion-label> 
+              <button item-content ion-button icon-only clear >
+                <ion-icon name="arrow-dropup" ></ion-icon>
+              </button>
+            </ion-item-divider>
+          </ion-item-group>
+          
+          <ion-list>
+            <div *ngIf="expandOpened">
+
+              <ion-item-sliding text-wrap *ngFor="let like of list">
+                
+                <ion-item *ngIf="like.status == 'away' && like.answer == false">
+                  <ion-avatar item-start>
+                    <img [src]="like.uidDog.imgDogProfile" />
+                  </ion-avatar>
+                  
+                  <h2>
+                    <span class="notificacao-destaque">{{like.uidSend.name}}</span> gostou de
+                    <span class="notificacao-destaque">{{like.uidDog.name}}</span> e diz:
+                    <span style="text-align: justify" class="notificacao-destaque">"{{like.message}}"</span>.
+                </h2>
+                  
+                <div class="botao-like-dislike-margin">
+                    <button class="botao-like-dislike" ion-button color="danger-light" (click)="deslike(like)">
+                        <ion-icon name="thumbs-down"></ion-icon>
+                      </button>
+                      
+                      <button class="botao-like-dislike" ion-button color="primary" (click)="likeFunction(like)">
+                        <ion-icon name="thumbs-up"></ion-icon>
+                      </button>
+                </div>
+                  
+                </ion-item>
+              
+              </ion-item-sliding>
+            </div>
+          </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

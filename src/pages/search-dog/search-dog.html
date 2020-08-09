@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle="left">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons right>
+      <button ion-button icon-only menuToggle="right">
+        <ion-icon class="icon-filtros" name="list-box"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-center>{{ 'pages.search-dogs.searchDogs' | translate }}</ion-title>
+
+
+  </ion-navbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="filtros-selecionados"text-center>Filtros selecionados</div>
+        <div *ngFor="let text of textForParamsSelected">
+          <span class="filtros">{{text}}</span>
+        </div>
+        <!-- mostrar quantos filtros foram selecionados -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+        <ion-label text-center class="dogs-encontrados">Dogs encontrados</ion-label>
+
+        <ion-list no-lines>
+          <ion-item text-wrap *ngFor="let dog of listDogs" (click)="selectDog(dog)">
+           
+              <ion-avatar item-start>
+                  <img [src]="dog.imgDogProfile">
+              </ion-avatar>
+
+              <h2>
+                <span class="list-dog-nome">{{dog.name}} </span> 
+                <ion-icon class="icon-sexo" *ngIf="dog.sex == 'male'" name="custom-macho" color="primary"></ion-icon>
+                <ion-icon class="icon-sexo" *ngIf="dog.sex == 'female'" name="custom-femea" color="secondary"></ion-icon>
+              </h2> 
+              
+              <h3 class="list-dog-raca"> {{dog.breed}} </h3>
+              <p class="list-dog-nascimento">{{ 'pages.search-dog.age' | translate }}: {{dog.birthDay | getDateToAge}} {{ 'pages.search-dog.years' | translate }}</p>
+              
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

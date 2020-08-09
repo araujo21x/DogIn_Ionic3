@@ -1,0 +1,37 @@
+<ion-header>
+
+    <ion-navbar>
+  
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+      <ion-title>{{ 'pages.contact.contactTitle' | translate }}</ion-title>
+  
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label class="contact-topicos">{{ 'pages.contact.topic' | translate }}</ion-label>
+        <ion-select [(ngModel)]="topic" interface="popover" >
+          <ion-option class="option-largura" value="bugReport" (ionSelect)="showLine(true)">{{ 'pages.contact.bugReport' | translate }}</ion-option>
+          <ion-option value="feedBack" (ionSelect)="showLine(true)">{{ 'pages.contact.feedback' | translate }}</ion-option>
+          <ion-option value="sugestion" (ionSelect)="showLine(true)">{{ 'pages.contact.sugestion' | translate }}</ion-option>
+          <ion-option value="others" (ionSelect)="showLine(true)">{{ 'pages.contact.others' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="expand" text-center no-border>
+    <ion-item >
+      <ion-input type="text" placeholder="{{ 'pages.contact.shareWithUs' | translate }}" [(ngModel)]="message"></ion-input>
+    </ion-item>
+    <button style="display: inline-block" class="contact-botao-enviar" ion-button (click)="sendMessage()">{{ 'pages.contact.sendButton' | translate }}</button>
+  </div>  
+</ion-content>

@@ -1,0 +1,46 @@
+.md, .ios {
+    page-edit-user {
+        #menu {
+            .menu-header { 
+                padding: 5px 15px;  color: white; 
+                .name { font-weight: 500; margin-bottom: 3px; } 
+                .e-mail { margin-top: 0; margin-bottom: 5px; }
+            }
+            .user-avatar { max-width: 125px; height: 125px; padding: .5em; height: 12vh; }
+            .user-avatar-size { height:90px; max-width:90px; }
+            h3, .label { color: #999; font-weight: 400; } 
+            ion-icon { color: #777; }
+            #list-footer { margin-bottom: 0px; }
+        }
+        
+        ion-content{background: white;}
+        .avatar{ width: 11em; height: 11em; margin: 0 auto; border-radius: 50%; margin-bottom: 30px;}
+        .avatar img{ width: 10.3em; height: 10.3em; border-radius: 50%; margin: 0 auto; display: block; }
+        .alterar-dados{
+            border-radius: 0.6em !important;
+            font-size: 1em;
+            margin-top: 2em;
+            margin-left: 23%;
+            width: 10em;
+            height: 3em;
+            display: block !important;
+        }
+        
+        ion-label{font-size: 1.5em; color: #777}
+        .buton-theme{width: 4em; height: 4em; border-radius: 50%;}
+        .col-pad{margin-right: 1em;}
+        .theme-font{font-size: 1.5em;}
+        
+        /*
+        quando o input for selecionado.
+        {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        */
+    }
+    
+}

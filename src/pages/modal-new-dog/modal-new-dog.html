@@ -1,0 +1,290 @@
+<ion-content padding class="blue-theme">
+
+  <ion-grid>
+    <ion-row>
+
+      <ion-col col-12>
+        <button class="x-button" ion-button icon-only (click)="dismiss()">
+          <ion-icon name="md-close"></ion-icon>
+        </button>
+      </ion-col>
+
+      <ion-col col-12>
+
+        <form [formGroup]="dogForm" id="common-form">
+          <ion-slides #slides pager>
+
+            <ion-slide class="slides-padding">
+              <div class="form-group">
+                <h2>
+                  {{ 'pages.modal-news-dog.dog-name-text-before' | translate }} <br>
+                  <span class="tema uppercase">{{ 'pages.modal-news-dog.dog-name' | translate }}</span>
+                </h2>
+
+                <ion-item>
+                  <ion-input type="text" [(ngModel)]="dog.name" name="name" formControlName="name" text-center></ion-input>
+                </ion-item>
+
+                <button class="botao-prev-next" ion-button clear icon-end (click)="next()" [disabled]="!dog.name">
+                  {{ 'pages.modal-news-dog.next' | translate }}
+                  <ion-icon name='arrow-forward'></ion-icon>
+                </button>
+              </div>
+            </ion-slide>
+
+            <ion-slide class="slides-padding">
+
+              <h2>
+                {{ 'pages.modal-news-dog.dog-birthday-text-before' | translate }} <br>
+                <span class="tema uppercase">{{ 'pages.modal-news-dog.dog-birthday' | translate }}</span>
+              </h2>
+
+              <ion-item>
+                <ion-datetime displayFormat="DD MMMM YYYY" [(ngModel)]="dog.birthDay" name="birthDay" formControlName="birthDay" monthNames="Janeiro, Feveireiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"></ion-datetime>
+              </ion-item>
+
+              <button class="botao-prev-next" ion-button clear icon-start (click)="prev()">
+                <ion-icon name='arrow-back'></ion-icon>
+                {{ 'pages.modal-news-dog.back' | translate }}
+              </button>
+
+              <button class="botao-prev-next" ion-button clear icon-end (click)="next()" [disabled]="!dog.birthDay">
+                {{ 'pages.modal-news-dog.next' | translate }}
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+
+            </ion-slide>
+
+            <ion-slide class="slides-padding">
+              
+              <h2>
+                {{ 'pages.modal-news-dog.dog-sex-text-before' | translate }} <br>
+                <span class="destaque-menino">{{ 'pages.modal-news-dog.dog-sex-boy' | translate }}</span>
+                {{ 'pages.modal-news-dog.dog-sex-text-middle' | translate }}
+                <span class="destaque-menina">{{ 'pages.modal-news-dog.dog-sex-girl' | translate }}</span>
+              </h2>
+              
+              <ion-row>
+                <ion-col>
+                  <label>
+                    <img class="img-sexo" src="assets/icon-macho.png"><br> {{ 'pages.modal-news-dog.dog-sex-boy' | translate }} <br>
+                    <input type="radio" value="male" [(ngModel)]="dog.sex" formControlName="sex">
+                  </label>
+                </ion-col>
+
+                <ion-col>
+                  <label>
+                    <img class="img-sexo" src="assets/icon-femea.png"><br> {{ 'pages.modal-news-dog.dog-sex-girl' | translate }} <br>
+                    <input type="radio" value="female" [(ngModel)]="dog.sex" formControlName="sex">
+                  </label>
+                </ion-col>
+              </ion-row>   
+
+              <button class="botao-prev-next" ion-button clear icon-start (click)="prev()">
+                <ion-icon name='arrow-back'></ion-icon>
+                {{ 'pages.modal-news-dog.back' | translate }}
+              </button>
+              
+              <button class="botao-prev-next" ion-button clear icon-end (click)="next()" [disabled]="!dog.sex">
+                {{ 'pages.modal-news-dog.next' | translate }}
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+            </ion-slide>
+
+            <ion-slide class="slides-padding">
+              <h2>
+                {{ 'pages.modal-news-dog.you-are-in-the' | translate }}<br>
+                {{ 'pages.modal-news-dog.halfway' | translate }}
+              </h2>
+              <h2>
+                {{ 'pages.modal-news-dog.dog-breed-text-before' | translate }}<br>
+                <span class="tema uppercase">{{ 'pages.modal-news-dog.dog-breed' | translate }}</span>
+              </h2>
+
+              <ion-item>
+                <ion-input type="text" [(ngModel)]="dog.breed" name="breed" formControlName="breed" text-center></ion-input>
+              </ion-item>
+
+              <button class="botao-prev-next" ion-button clear icon-start (click)="prev()">
+                <ion-icon name='arrow-back'></ion-icon>
+                {{ 'pages.modal-news-dog.back' | translate }}
+              </button>
+
+              <button class="botao-prev-next" ion-button clear icon-end (click)="next()" [disabled]="!dog.breed">
+                {{ 'pages.modal-news-dog.next' | translate }}
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+
+            </ion-slide>
+
+            <ion-slide class="slides-padding">
+              <h2>
+                {{ 'pages.modal-news-dog.dog-fur-color-text-before' | translate }}
+                <span class="tema uppercase">{{ 'pages.modal-news-dog.dog-fur-color' | translate }}</span>
+              </h2>
+
+              <ion-item>
+                <ion-input text-center type="text" [(ngModel)]="dog.fur" name="fur" formControlName="fur"></ion-input>
+              </ion-item>
+
+              <button class="botao-prev-next" ion-button clear icon-start (click)="prev()">
+                <ion-icon name='arrow-back'></ion-icon>
+                {{ 'pages.modal-news-dog.back' | translate }}
+              </button>
+
+              <button class="botao-prev-next" ion-button clear icon-end (click)="next()" [disabled]="!dog.fur">
+                {{ 'pages.modal-news-dog.next' | translate }}
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+
+            </ion-slide>
+
+            <ion-slide class="slides-padding">
+
+              <h2>
+                  {{ 'pages.modal-news-dog.dog-fur-type-text-before' | translate }}
+                  <span class="tema uppercase">{{ 'pages.modal-news-dog.dog-fur-type' | translate }}</span>
+              </h2>
+
+              <ion-item>
+                <ion-select interface="popover" [(ngModel)]="dog.furType" name="furType" formControlName="furType">
+                  <ion-option value="short">{{ 'pages.modal-news-dog.dog-fur-short' | translate }}</ion-option>
+                  <ion-option value="average">{{ 'pages.modal-news-dog.dog-fur-averege' | translate }}</ion-option>
+                  <ion-option value="long">{{ 'pages.modal-news-dog.dog-fur-long' | translate }}</ion-option>
+                  <ion-option value="curly">{{ 'pages.modal-news-dog.dog-fur-curly' | translate }}</ion-option>
+                  <ion-option value="double">{{ 'pages.modal-news-dog.dog-fur-double' | translate }}</ion-option>
+                  <ion-option value="hard">{{ 'pages.modal-news-dog.dog-fur-hard' | translate }}</ion-option>
+                  <ion-option value="others">{{ 'pages.modal-news-dog.dog-fur-others' | translate }}</ion-option>
+                </ion-select>
+              </ion-item>
+
+              <button class="botao-prev-next" ion-button clear icon-start (click)="prev()">
+                <ion-icon name='arrow-back'></ion-icon>
+                {{ 'pages.modal-news-dog.back' | translate }}
+              </button>
+
+              <button class="botao-prev-next" ion-button clear icon-end (click)="next()" [disabled]="!dog.furType">
+                {{ 'pages.modal-news-dog.next' | translate }}
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+
+            </ion-slide>
+
+            <ion-slide class="personalidade">
+              <h2>
+                  {{ 'pages.modal-news-dog.dog-personality-text-before' | translate }} <br>
+                  <span class="tema uppercase">{{ 'pages.modal-news-dog.dog-personality' | translate }}</span>
+              </h2>
+
+              <ion-row >               
+                <ion-col>
+                  <label class="alert brincalhao" (click)="alertTemperament('Cachorros brincalhões são ativos, estão sempre brincando e aprontando e se relacionam bem com todas as pessoas e animais')">
+                    <img src="assets/icon/icon-brincalhao.png"> <br>
+                    <span class="temperamento-nome">{{ 'pages.modal-news-dog.dog-personality-playful' | translate }}</span> <br>
+                    <input type="radio" value="playful" [(ngModel)]="dog.temperament" formControlName="temperament">
+                  </label> 
+                </ion-col>
+
+                <ion-col>
+                  <label (click)="alertTemperament('Cachorros dóceis são tranquilos, ideais para adestramento e se relacionam bem com todas as pessoas e animais')">
+                    <img src="assets/icon/icon-docil.png" > <br>
+                    <span class="temperamento-nome">{{ 'pages.modal-news-dog.dog-personality-docil' | translate }}</span> <br>
+                    <input type="radio" value="docile" [(ngModel)]="dog.temperament" formControlName="temperament">
+                  </label>
+                </ion-col>
+              
+                <ion-col>
+                  <label (click)="alertTemperament('Cachorros dengosos pedem muita atenção dos seus donos, e se relacionam bem com todas as pessoas e animais')">
+                    <img src="assets/icon/icon-dengoso.png"> <br> 
+                    <span class="temperamento-nome">{{ 'pages.modal-news-dog.dog-personality-dependent' | translate }}</span> <br>
+                    <input type="radio" value="faddist" [(ngModel)]="dog.temperament" formControlName="temperament">
+                  </label>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <label (click)="alertTemperament('Cachorros medrosos tem dificuldades em confiar em outras pessoas e animais')">
+                    <img src="assets/icon/icon-medroso.png" > <br>
+                    <span class="temperamento-nome">{{ 'pages.modal-news-dog.dog-personality-fearful' | translate }}</span> <br>
+                    <input  type="radio" value="fearful" [(ngModel)]="dog.temperament" formControlName="temperament">
+                  </label>
+                </ion-col>
+
+                <ion-col>
+                  <label (click)="alertTemperament('Cachorros territorialista protegem seu território, se relacionam bem com pessoas e animais próximos e não tão bem com estranhos')">
+                    <img src="assets/icon/icon-territorialista.png" > <br>
+                    <span class="temperamento-nome">{{ 'pages.modal-news-dog.dog-personality-territorial' | translate }}</span> <br>
+                    <input  type="radio" value="territorial" [(ngModel)]="dog.temperament" formControlName="temperament">
+                  </label>
+                  </ion-col>
+
+                  <ion-col>
+                  <label (click)="alertTemperament('Cachorros bravos protegem o seu território e late para todas as pessoas e animais, exceto seus donos')">
+                    <img src="assets/icon/icon-bravo.png" > <br>
+                    <span class="temperamento-nome">{{ 'pages.modal-news-dog.dog-personality-angry' | translate }}</span> <br>
+                    <input  type="radio" value="angry" [(ngModel)]="dog.temperament" formControlName="temperament">
+                  </label>
+                </ion-col>
+              </ion-row>
+                
+              <button class="botao-prev-next" ion-button clear icon-start (click)="prev()">
+                <ion-icon name='arrow-back'></ion-icon>
+                {{ 'pages.modal-news-dog.back' | translate }}
+              </button>
+
+              <button class="botao-prev-next" ion-button clear icon-end (click)="next()" [disabled]="!dog.temperament">
+                {{ 'pages.modal-news-dog.next' | translate }}
+                <ion-icon name='arrow-forward'></ion-icon>
+              </button>
+            </ion-slide>
+
+            <ion-slide class="slides-padding">
+              <h2>
+                {{ 'pages.modal-news-dog.text-end-before' | translate }}
+                <span class="tema uppercase">{{ 'pages.modal-news-dog.text-end' | translate }}</span>
+                {{ 'pages.modal-news-dog.text-end-after' | translate }}
+              </h2>
+              
+              <button class="botao-prev-next" ion-button clear icon-start (click)="prev()">
+                <ion-icon name='arrow-back'></ion-icon>
+                {{ 'pages.modal-news-dog.fix' | translate }}
+              </button>
+
+              <button class="botao-prev-next" ion-button clear icon-end type="submit" (click)="addDog()" >
+                {{ 'pages.modal-news-dog.finish' | translate }}
+                <ion-icon name='checkmark-circle-outline'></ion-icon>
+              </button>
+            </ion-slide>
+
+          <ion-slide class="personalidade">
+              <ion-card (click)="dismiss(false)">
+                <ion-card-header>
+                  <span class="destaque-menino">{{ 'pages.modal-news-dog.see-your-dogs' | translate }}</span> 
+                </ion-card-header>
+                {{ 'pages.modal-news-dog.go-to-list-dogs' | translate }}
+                <ion-card-content>
+                  
+                </ion-card-content>
+              </ion-card>
+
+              <ion-card (click)="dismiss(true)">
+                  <ion-card-header>
+                    <span class="tema uppercase">{{ 'pages.modal-news-dog.edit-dog' | translate }}</span>
+                  </ion-card-header>
+                  {{ 'pages.modal-news-dog.go-to-edit-dog' | translate }}
+                  <ion-card-content>
+                    
+                  </ion-card-content>
+                </ion-card>
+          </ion-slide>
+
+          </ion-slides>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
